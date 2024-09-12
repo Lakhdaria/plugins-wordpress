@@ -87,5 +87,10 @@ function departure(){
     // sera lance lors de l'activation du plugin
 }
 
+register_activation_hook(__FILE__, 'departure'); 
+global $wpdb;
+
+$table_name = $wpdb->prefix.'theme_listing'; 
+
 
 ?>
