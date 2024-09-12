@@ -27,12 +27,25 @@ function theme_listing_page() {
         liste_theme_dir();     
 
 
-}
 
+    }
+
+
+    function ma_page() {
+        echo"<div>
+                <h1>Ma page sous-menu</h1>
+            </div>"; 
+    
+    
+    
+    }
+    
 
 function theme_listing_menu(){
     add_menu_page('Titre page',  'Titre menu','manage_options','idmenu','theme_listing_page',
     'dashicons-admin-appearance', 5);
+
+    add_submenu_page('idmenu', 'Titre page', 'Titrss-menu', 'manage_options', 'idssmenu', 'ma_page');
     
 }
 
@@ -67,6 +80,12 @@ function theme_listing_shortcode(){
 }
 
 add_shortcode('them_list', 'theme_listing_shortcode'); 
+
+
+
+function departure(){
+    // sera lance lors de l'activation du plugin
+}
 
 
 ?>
