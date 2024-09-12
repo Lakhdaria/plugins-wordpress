@@ -24,6 +24,8 @@ function theme_listing_page() {
             <h1>Ma page dans l'admin</h1>
         </div>"; 
 
+        liste_theme_dir();     
+
 
 }
 
@@ -46,8 +48,25 @@ function liste_theme_dir(){
 
     echo "<h2>Liste de tous les themes</h2>";
 
-    echo'<ul>'
+    echo'<ul>';
+    foreach($themesdir as $onedir){
+        echo'<li>' .$onedir.'</li>';
+    }
+
+    echo '</ul>';
 
 }
+
+
+function theme_listing_shortcode(){
+    ob_start();
+    liste_theme_dir();
+    return ob_get_clean();
+
+
+}
+
+add_shortcode('them_list', 'theme_listing_shortcode'); 
+
 
 ?>
